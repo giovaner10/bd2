@@ -11,9 +11,6 @@ public class Console {
         Scanner teclado = new Scanner(System.in);
 
 
-
-
-
         while (true){
             System.out.println(
                     "1 - inserir livro\n" +
@@ -32,7 +29,7 @@ public class Console {
                 System.out.println("informe o preco do livro");
                 double preco = teclado.nextDouble();
 
-                LivroService.testaInsert(codigo,nome,preco);
+                LivroService.livroInsert(codigo,nome,preco);
 
 
             } else if (opcao == 999) { //SAIR DO SISTEMA

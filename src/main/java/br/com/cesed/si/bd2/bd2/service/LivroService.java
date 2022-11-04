@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public class LivroService {
 
 
-    public static void testaInsert(int codigo, String nome, double preco){
+    public static void livroInsert(int codigo, String nome, double preco){
         Livro livro = new Livro(codigo, nome, preco);
 
         try {
@@ -20,4 +20,6 @@ public class LivroService {
             e.printStackTrace();
         }
     }
+
+
 }

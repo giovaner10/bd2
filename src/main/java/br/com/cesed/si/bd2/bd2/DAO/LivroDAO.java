@@ -46,4 +46,32 @@ public class LivroDAO {
         }
 
     }
+
+
+    public void atualizarLivro(int codigo, double preco) {
+
+        String sql = "UPDATE livro SET preco = ? WHERE codigo = ?";
+
+
+        try {
+
+            PreparedStatement preparador = con.prepareStatement(sql);
+
+            preparador.setString(1, String.valueOf(preco));
+
+            preparador.setString(2, String.valueOf(codigo));
+
+            preparador.execute();
+
+            preparador.close();
+
+            System.out.println("atualizacao realizada com sucesso");
+
+        } catch (SQLException e) {
+
+            System.out.println("Erro - " + e.getMessage());
+
+        }
+
+    }
 }
