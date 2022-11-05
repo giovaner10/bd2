@@ -20,18 +20,18 @@ public class LivroDAO {
 
     public void adicionarLivro(Livro livro) {
 
-        String sql = "INSERT INTO livro VALUES(?,?,?)";
+        String sql = "INSERT INTO livro(titulo, preco, estoque) VALUES(?,?,?)";
 
 
         try {
 
             PreparedStatement preparador = con.prepareStatement(sql);
 
-            preparador.setInt(1, livro.getCodigo());
+            preparador.setString(1, livro.getTitulo());
 
-            preparador.setString(2, livro.getTitulo());
+            preparador.setDouble(2, livro.getPreco());
 
-            preparador.setString(3, String.valueOf(livro.getPreco()));
+            preparador.setInt(3, livro.getEstoque());
 
             preparador.execute();
 
@@ -57,9 +57,12 @@ public class LivroDAO {
 
             PreparedStatement preparador = con.prepareStatement(sql);
 
-            preparador.setString(1, String.valueOf(preco));
+            preparador.setInt(1, codigo);
 
-            preparador.setString(2, String.valueOf(codigo));
+            preparador.setDouble(2, preco);
+
+            System.out.println(preco);
+            System.out.println(codigo);
 
             preparador.execute();
 

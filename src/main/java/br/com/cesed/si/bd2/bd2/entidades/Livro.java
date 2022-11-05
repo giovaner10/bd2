@@ -7,7 +7,14 @@ import lombok.Data;
 @AllArgsConstructor
 public class Livro {
 
+    public Livro(String titulo, double preco, int estoque) {
+        this.titulo = titulo;
+        this.preco = preco;
+        this.estoque = estoque;
+    }
+
     private int codigo;
     private String titulo;
     private double preco;
+    private int estoque;
 }
