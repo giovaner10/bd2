@@ -25,7 +25,7 @@ public class Console {
 
 
                 System.out.println("informe o nome do livro");
-                String nome = teclado.next();
+                String nome = teclado.nextLine();
 
                 System.out.println("informe o preco do livro");
                 double preco = teclado.nextDouble();
@@ -37,7 +37,11 @@ public class Console {
 
 
             } else if (opcao == 2) { //UPDATE LIVRO
-                LivroService.livroUpdate(2, 55);
+                System.out.println("informe o código do livro que deseja atualizar");
+                int codigo = teclado.nextInt();
+                System.out.println("informe o novo preço");
+                double preco = teclado.nextDouble();
+                LivroService.livroUpdate(codigo, preco);
 
             }
             else if (opcao == 3) { //UPDATE LIVRO

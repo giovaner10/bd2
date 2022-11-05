@@ -23,7 +23,7 @@ public class LivroService {
     }
 
 
-    public static void livroUpdate(int codigo, int novoPreco){
+    public static void livroUpdate(int codigo, double novoPreco){
 
         try {
             LivroDAO livroDAO = new LivroDAO();

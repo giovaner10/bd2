@@ -60,14 +60,12 @@ public class LivroDAO {
 
             PreparedStatement preparador = con.prepareStatement(sql);
 
-            preparador.setInt(1, codigo);
+            preparador.setDouble(1, preco);
 
-            preparador.setDouble(2, preco);
+            preparador.setInt(2, codigo);
 
-            System.out.println(preco);
-            System.out.println(codigo);
 
-            preparador.execute();
+            System.out.println(preparador.execute());
 
             preparador.close();
 
