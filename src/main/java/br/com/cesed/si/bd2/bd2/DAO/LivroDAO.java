@@ -5,7 +5,10 @@ import br.com.cesed.si.bd2.bd2.entidades.Livro;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class LivroDAO {
 
@@ -76,5 +79,62 @@ public class LivroDAO {
 
         }
 
+    }
+
+
+
+    public void deletarLivro(int codigo) {
+
+        String sql = "DELETE FROM livro WHERE codigo = ?";
+
+
+        try {
+
+            PreparedStatement preparador = con.prepareStatement(sql);
+
+            preparador.setInt(1, codigo);
+
+            preparador.execute();
+
+            preparador.close();
+
+            System.out.println("atualizacao realizada com sucesso");
+
+        } catch (SQLException e) {
+
+            System.out.println("Erro - " + e.getMessage());
+
+        }
+
+    }
+
+
+
+    public List<Livro> listarLivro() {
+
+        String sql = "SELECT * FROM livro";
+
+        List<Livro> livroList = new ArrayList<>();
+
+        try {
+
+            PreparedStatement preparador = con.prepareStatement(sql);
+            ResultSet resultSet = preparador.executeQuery();
+
+            while (resultSet.next()){
+
+                Livro novoLivro = new Livro(resultSet.getInt("codigo")
+                        , resultSet.getString("titulo")
+                        ,resultSet.getDouble("preco")
+                        ,resultSet.getInt("estoque"));
+
+                livroList.add(novoLivro);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Erro - " + e.getMessage());
+        }
+
+        return livroList;
     }
 }

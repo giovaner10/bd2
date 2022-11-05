@@ -13,9 +13,10 @@ public class Console {
 
         while (true){
             System.out.println(
-                    "1 - inserir livro\n" +
+                            "1 - inserir livro\n" +
                             "2 - atualizar livro\n" +
-                    "999 - SAIR");
+                            "3 - Deletar livro\n" +
+                            "999 - SAIR");
 
             int opcao = teclado.nextInt();
 
@@ -35,12 +36,16 @@ public class Console {
                 LivroService.livroInsert(nome,preco, quantidade);
 
 
-            } else if (opcao == 2) { //SAIR DO SISTEMA
+            } else if (opcao == 2) { //UPDATE LIVRO
                 LivroService.livroUpdate(2, 55);
 
             }
+            else if (opcao == 3) { //UPDATE LIVRO
+                System.out.println("informe o codigo do livro que deseja remover");
+                int codigo = teclado.nextInt();
+                LivroService.livroDelete(codigo);
 
-
+            }
             else if (opcao == 999) { //SAIR DO SISTEMA
                 System.out.println("Processando...");
                 Thread.sleep(1300);
