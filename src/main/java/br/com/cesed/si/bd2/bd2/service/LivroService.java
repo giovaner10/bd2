@@ -48,7 +48,7 @@ public class LivroService {
     }
 
 
-    public static List<Livro> livroFindAll(){
+    public static List<Livro> listarTodos(){
 
         try {
             LivroDAO livroDAO = new LivroDAO();

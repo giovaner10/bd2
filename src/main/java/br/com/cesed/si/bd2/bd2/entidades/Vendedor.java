@@ -10,4 +10,9 @@ public class Vendedor {
     private int matricula;
     private String nome;
     private String telefone;
+
+    public Vendedor(String nome, String telefone){
+        this.nome = nome;
+        this.telefone = telefone;
+    }
 }
