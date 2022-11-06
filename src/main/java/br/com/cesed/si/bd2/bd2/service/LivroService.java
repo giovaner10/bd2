@@ -23,7 +23,7 @@ public class LivroService {
     }
 
 
-    public static void livroUpdate(int codigo, int novoPreco){
+    public static void livroUpdate(int codigo, double novoPreco){
 
         try {
             LivroDAO livroDAO = new LivroDAO();
@@ -48,7 +48,11 @@ public class LivroService {
     }
 
 
+<<<<<<< HEAD
     public static void livroFindAll(){
+=======
+    public static List<Livro> listarTodos(){
+>>>>>>> 04530a1eb1aad161decf04fed7b5081c203cf221
 
         try {
             LivroDAO livroDAO = new LivroDAO();

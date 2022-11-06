@@ -11,7 +11,11 @@ public class Vendedor {
     private String nome;
     private String telefone;
 
+<<<<<<< HEAD
     public Vendedor(String nome, String telefone) {
+=======
+    public Vendedor(String nome, String telefone){
+>>>>>>> 04530a1eb1aad161decf04fed7b5081c203cf221
         this.nome = nome;
         this.telefone = telefone;
     }
