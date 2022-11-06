@@ -14,7 +14,7 @@ public class Console {
 
         while (true){
             System.out.println(
-                            "\n 1 - inserir livro " +
+                    "\n 1 - inserir livro " +
                             " 2 - atualizar livro " +
                             " 3 - Deletar livro " +
                             "\n-----------------------------------------------------------------\n" +
@@ -30,7 +30,7 @@ public class Console {
                             " 999 - SAIR\n");
 
 
-            int opcao = Integer.parseInt(teclado.nextLine());
+            int opcao = teclado.nextInt();
 
 
             if(opcao == 1){ //INSERIR LIVRO
@@ -45,7 +45,10 @@ public class Console {
                 System.out.println("informe a quantidade de exemplares");
                 int quantidade = Integer.parseInt(teclado.nextLine());
 
-                LivroService.livroInsert(nome,preco, quantidade);
+                LivroService.livroInsert(nome, preco, quantidade);
+                lerVerificar(teclado);
+
+
 
 
             } else if (opcao == 2) { //UPDATE LIVRO
@@ -54,12 +57,15 @@ public class Console {
                 System.out.println("informe o novo preço");
                 double preco = Double.parseDouble(teclado.nextLine());
                 LivroService.livroUpdate(codigo, preco);
+                lerVerificar(teclado);
 
-            }
-            else if (opcao == 3) { //Remove LIVRO
+
+            } else if (opcao == 3) { //Remove LIVRO
                 System.out.println("informe o codigo do livro que deseja remover");
                 int codigo = Integer.parseInt(teclado.nextLine());
                 LivroService.livroDelete(codigo);
+                lerVerificar(teclado);
+
 
             } else if(opcao == 4) { //INSERIR vendedor
 
@@ -71,6 +77,8 @@ public class Console {
                 String telefone = teclado.next();
 
                 VendedorService.vendedorInsert(nome, telefone);
+                lerVerificar(teclado);
+
             } else if(opcao == 5) { //atualizar vendedor
 
 
@@ -81,6 +89,8 @@ public class Console {
                 String telefone = teclado.next();
 
                 VendedorService.vendedorUpdate(matricula, telefone);
+                lerVerificar(teclado);
+
             }else if(opcao == 6) { //deletar vendedor
 
 
@@ -88,6 +98,8 @@ public class Console {
                 int matricula = teclado.nextInt();
 
                 VendedorService.vendedorDelete(matricula);
+                lerVerificar(teclado);
+
             }else if(opcao == 7) { //deletar vendedor
 
 
@@ -101,21 +113,24 @@ public class Console {
                 int quantidade = teclado.nextInt();
 
                 VendaService.vendaInsert(matricula, codigo, quantidade);
-            }
-            else if(opcao == 8) { //listar livros
+                lerVerificar(teclado);
+
+            } else if(opcao == 8) { //listar livros
 
                 LivroService.livroFindAll();
+                lerVerificar(teclado);
 
             }else if(opcao == 9) { //listar vendedores
 
-               VendedorService.vendedorFindAll();
+                VendedorService.vendedorFindAll();
+                lerVerificar(teclado);
+
             }else if(opcao == 10) { //listar vendas
 
                 VendaService.vendaFindAll();
+                lerVerificar(teclado);
 
-            }
-
-            else if (opcao == 999) { //SAIR DO SISTEMA
+            } else if (opcao == 999) { //SAIR DO SISTEMA
                 System.out.println("Processando...");
                 Thread.sleep(1300);
                 System.out.println("App fechado!");
@@ -124,4 +139,14 @@ public class Console {
         }
     }
 
+
+    public static void lerVerificar(Scanner teclado) {
+        while (true) {
+            System.out.println("pressione qualquer tecla para continuar");
+            teclado.next();
+            break;
+        }
+    }
 }
+
+
