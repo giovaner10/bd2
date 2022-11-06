@@ -25,9 +25,6 @@ public class VendaDAO {
 
         String sql = "INSERT INTO venda(matriculaVendedor, codigoLivro, quantidade) VALUES(?,?,?)";
 
-
-
-
         try {
 
             PreparedStatement preparador = con.prepareStatement(sql);
@@ -35,7 +32,7 @@ public class VendaDAO {
 
             preparador.setInt(1, venda.getMatriculaVendedor());
 
-            preparador.setInt(2, 6);
+            preparador.setInt(2, venda.getCodigoLivro());
 
             preparador.setInt(3, venda.getQuantidade());
 

@@ -37,13 +37,13 @@ public class Console {
 
 
                 System.out.println("informe o nome do livro");
-                String nome = teclado.nextLine();
+                String nome = teclado.next();
 
                 System.out.println("informe o preco do livro");
-                double preco = Double.parseDouble(teclado.nextLine());
+                double preco = teclado.nextDouble();
 
                 System.out.println("informe a quantidade de exemplares");
-                int quantidade = Integer.parseInt(teclado.nextLine());
+                int quantidade = teclado.nextInt();
 
                 LivroService.livroInsert(nome, preco, quantidade);
                 lerVerificar(teclado);
@@ -53,16 +53,19 @@ public class Console {
 
             } else if (opcao == 2) { //UPDATE LIVRO
                 System.out.println("informe o código do livro que deseja atualizar");
-                int codigo = Integer.parseInt(teclado.nextLine());
+                int codigo = teclado.nextInt();
+
                 System.out.println("informe o novo preço");
-                double preco = Double.parseDouble(teclado.nextLine());
+                double preco = teclado.nextDouble();
+
                 LivroService.livroUpdate(codigo, preco);
                 lerVerificar(teclado);
 
 
             } else if (opcao == 3) { //Remove LIVRO
                 System.out.println("informe o codigo do livro que deseja remover");
-                int codigo = Integer.parseInt(teclado.nextLine());
+                int codigo = teclado.nextInt();
+
                 LivroService.livroDelete(codigo);
                 lerVerificar(teclado);
 

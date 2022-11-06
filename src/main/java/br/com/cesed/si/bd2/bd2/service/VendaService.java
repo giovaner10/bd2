@@ -11,9 +11,10 @@ public class VendaService {
     public static void vendaInsert(int vendedor, int livro, int quantidade){
         Venda venda = new Venda(vendedor, livro, quantidade);
 
+        System.out.println(venda.getCodigoLivro());
+
         try {
             VendaDAO vendaDAO = new VendaDAO();
-            System.out.println(livro);
             vendaDAO.adicionarVenda(venda);
         } catch (SQLException e) {
             e.printStackTrace();
