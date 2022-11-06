@@ -1,14 +1,9 @@
 package br.com.cesed.si.bd2.bd2;
 
-import br.com.cesed.si.bd2.bd2.entidades.Livro;
 import br.com.cesed.si.bd2.bd2.service.LivroService;
-<<<<<<< HEAD
 import br.com.cesed.si.bd2.bd2.service.VendaService;
-=======
->>>>>>> 04530a1eb1aad161decf04fed7b5081c203cf221
 import br.com.cesed.si.bd2.bd2.service.VendedorService;
 
-import java.util.List;
 import java.util.Scanner;
 
 public class Console {
@@ -18,7 +13,6 @@ public class Console {
 
 
         while (true){
-<<<<<<< HEAD
             System.out.println(
                             "\n 1 - inserir livro " +
                             " 2 - atualizar livro " +
@@ -34,19 +28,7 @@ public class Console {
                             " 9 - Listar vendedores " +
                             " 10 - Listar vendas " +
                             " 999 - SAIR\n");
-=======
-            System.out.println("\n" +
-                            "1 - Inserir livro\n" +
-                            "2 - Atualizar livro\n" +
-                            "3 - Deletar livro\n" +
-                            "4 - Listar todos os livros\n" +
-                            "5 - Inserir vendedor\n" +
-                            "6 - Atualizar vendedor\n" +
-                            "7 - Deletar vendedor\n" +
-                            "8 - Listar todos os vendedores\n" +
-                            "999 - SAIR" +
-                            "\n");
->>>>>>> 04530a1eb1aad161decf04fed7b5081c203cf221
+
 
             int opcao = Integer.parseInt(teclado.nextLine());
 
@@ -118,9 +100,8 @@ public class Console {
                 System.out.println("informe a quantidade de exemplares");
                 int quantidade = teclado.nextInt();
 
-                VendaService.vendaInsert(matricula, codigo, 1);
+                VendaService.vendaInsert(matricula, codigo, quantidade);
             }
-<<<<<<< HEAD
             else if(opcao == 8) { //listar livros
 
                 LivroService.livroFindAll();
@@ -131,35 +112,6 @@ public class Console {
             }else if(opcao == 10) { //listar vendas
 
                 VendaService.vendaFindAll();
-=======
-
-            else if (opcao == 4) { //Listar livros
-                List<Livro> livroList = LivroService.listarTodos();
-                System.out.println("\n");
-                for (Livro l : livroList){
-                    System.out.println(l);
-                }
-                System.out.println();
-            }
-
-            else if (opcao == 5) {// Adicionar vendedor
-                System.out.println("Informe o nome do vendedor");
-                String nome = teclado.nextLine();
-                System.out.println("Informe o telefone do vendedor");
-                String telefone  = teclado.nextLine();
-                VendedorService.insert(nome, telefone);
-            }
-
-            else if (opcao == 6) { //  Editar vendedor
-
-            }
-
-            else if (opcao == 7) { // Deletar vendedor
-
-            }
-
-            else if (opcao == 8) { // Listar todos os vendedores
->>>>>>> 04530a1eb1aad161decf04fed7b5081c203cf221
 
             }
 

@@ -4,12 +4,11 @@ import br.com.cesed.si.bd2.bd2.DAO.LivroDAO;
 import br.com.cesed.si.bd2.bd2.entidades.Livro;
 
 import java.sql.SQLException;
-import java.util.List;
 
 public class LivroService {
 
 
-    public static void livroInsert(String nome, double preco, int estoque){
+    public static void livroInsert(String nome, double preco, int estoque) {
         Livro livro = new Livro(nome, preco, estoque);
 
         try {
@@ -23,7 +22,7 @@ public class LivroService {
     }
 
 
-    public static void livroUpdate(int codigo, double novoPreco){
+    public static void livroUpdate(int codigo, double novoPreco) {
 
         try {
             LivroDAO livroDAO = new LivroDAO();
@@ -35,7 +34,7 @@ public class LivroService {
         }
     }
 
-    public static void livroDelete(int codigo){
+    public static void livroDelete(int codigo) {
 
         try {
             LivroDAO livroDAO = new LivroDAO();
@@ -48,11 +47,7 @@ public class LivroService {
     }
 
 
-<<<<<<< HEAD
-    public static void livroFindAll(){
-=======
-    public static List<Livro> listarTodos(){
->>>>>>> 04530a1eb1aad161decf04fed7b5081c203cf221
+    public static void livroFindAll() {
 
         try {
             LivroDAO livroDAO = new LivroDAO();
@@ -72,7 +67,6 @@ public class LivroService {
         }
 
     }
-
 
 
 }

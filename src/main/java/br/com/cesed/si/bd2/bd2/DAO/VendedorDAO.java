@@ -1,22 +1,14 @@
 package br.com.cesed.si.bd2.bd2.DAO;
 
-<<<<<<< HEAD
 import br.com.cesed.si.bd2.bd2.conexao.Conecta;
-=======
-import br.com.cesed.si.bd2.bd2.Conecta;
->>>>>>> 04530a1eb1aad161decf04fed7b5081c203cf221
 import br.com.cesed.si.bd2.bd2.entidades.Vendedor;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-<<<<<<< HEAD
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-=======
-import java.sql.SQLException;
->>>>>>> 04530a1eb1aad161decf04fed7b5081c203cf221
 
 public class VendedorDAO {
 
@@ -27,7 +19,6 @@ public class VendedorDAO {
         con = Conecta.criarConexao();
 
     }
-<<<<<<< HEAD
 
 
     public void adicionarVendedor(Vendedor vendedor) {
@@ -35,18 +26,10 @@ public class VendedorDAO {
         String sql = "INSERT INTO vendedor(nome, telefone) VALUES(?,?)";
 
 
-=======
-    public void insert(Vendedor vendedor) {
-        String sql = "INSERT INTO vendedor(nome, telefone) VALUES(?,?)";
->>>>>>> 04530a1eb1aad161decf04fed7b5081c203cf221
         try {
 
             PreparedStatement preparador = con.prepareStatement(sql);
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 04530a1eb1aad161decf04fed7b5081c203cf221
             preparador.setString(1, vendedor.getNome());
 
             preparador.setString(2, vendedor.getTelefone());
@@ -55,17 +38,13 @@ public class VendedorDAO {
 
             preparador.close();
 
-<<<<<<< HEAD
             System.out.println("Inserção do vendedor realizada!");
-=======
->>>>>>> 04530a1eb1aad161decf04fed7b5081c203cf221
 
         } catch (SQLException e) {
 
             System.out.println("Erro - " + e.getMessage());
 
         }
-<<<<<<< HEAD
 
     }
 
@@ -151,7 +130,5 @@ public class VendedorDAO {
         }
 
         return vendedorList;
-=======
->>>>>>> 04530a1eb1aad161decf04fed7b5081c203cf221
     }
 }

@@ -4,7 +4,6 @@ import br.com.cesed.si.bd2.bd2.DAO.VendaDAO;
 import br.com.cesed.si.bd2.bd2.entidades.Venda;
 
 import java.sql.SQLException;
-import java.util.List;
 
 public class VendaService {
 
@@ -46,7 +45,5 @@ public class VendaService {
         }
 
     }
-
-
 
 }
