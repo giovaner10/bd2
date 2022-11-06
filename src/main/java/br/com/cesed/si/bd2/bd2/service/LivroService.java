@@ -48,18 +48,25 @@ public class LivroService {
     }
 
 
-    public static List<Livro> livroFindAll(){
+    public static void livroFindAll(){
 
         try {
             LivroDAO livroDAO = new LivroDAO();
-            return livroDAO.listarLivro();
+            System.out.println();
+            livroDAO.listarLivro()
+                    .forEach(
+                            livro -> System.out.println(
+                                    "codigo: " + livro.getCodigo()
+                                            + " titulo: " + livro.getTitulo()
+                                            + " preco: " + livro.getPreco()
+                                            + " estoque " + livro.getEstoque()));
+            System.out.println();
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
 
-        return null;
     }
 
 

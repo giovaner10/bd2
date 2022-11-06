@@ -11,4 +11,10 @@ public class Venda {
     private int matriculaVendedor;
     private int codigoLivro;
     private int quantidade;
+
+    public Venda(int matriculaVendedor, int codigoLivro, int quantidade) {
+        this.matriculaVendedor = matriculaVendedor;
+        this.codigoLivro = codigoLivro;
+        this.quantidade = quantidade;
+    }
 }

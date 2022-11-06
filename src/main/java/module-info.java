@@ -7,4 +7,6 @@ module br.com.cesed.si.bd2.bd2 {
 
     opens br.com.cesed.si.bd2.bd2 to javafx.fxml;
     exports br.com.cesed.si.bd2.bd2;
+    exports br.com.cesed.si.bd2.bd2.conexao;
+    opens br.com.cesed.si.bd2.bd2.conexao to javafx.fxml;
 }

@@ -1,6 +1,6 @@
 package br.com.cesed.si.bd2.bd2.DAO;
 
-import br.com.cesed.si.bd2.bd2.Conecta;
+import br.com.cesed.si.bd2.bd2.conexao.Conecta;
 import br.com.cesed.si.bd2.bd2.entidades.Livro;
 
 import java.sql.Connection;
@@ -60,9 +60,9 @@ public class LivroDAO {
 
             PreparedStatement preparador = con.prepareStatement(sql);
 
-            preparador.setInt(1, codigo);
+            preparador.setInt(2, codigo);
 
-            preparador.setDouble(2, preco);
+            preparador.setDouble(1, preco);
 
             System.out.println(preco);
             System.out.println(codigo);

@@ -1,4 +1,4 @@
-package br.com.cesed.si.bd2.bd2;
+package br.com.cesed.si.bd2.bd2.conexao;
 
 import java.sql.Connection;
 
@@ -19,7 +19,6 @@ public class Conecta {
         Connection conecta = DriverManager.getConnection(URL, USER, PASS);
 
         if (conecta != null) {
-            System.out.print("Conexão efetuada com sucesso...");
             return conecta;
         }
 

@@ -1,6 +1,8 @@
 package br.com.cesed.si.bd2.bd2;
 
 import br.com.cesed.si.bd2.bd2.service.LivroService;
+import br.com.cesed.si.bd2.bd2.service.VendaService;
+import br.com.cesed.si.bd2.bd2.service.VendedorService;
 
 import java.util.Scanner;
 
@@ -13,10 +15,20 @@ public class Console {
 
         while (true){
             System.out.println(
-                            "1 - inserir livro\n" +
-                            "2 - atualizar livro\n" +
-                            "3 - Deletar livro\n" +
-                            "999 - SAIR");
+                            "\n 1 - inserir livro " +
+                            " 2 - atualizar livro " +
+                            " 3 - Deletar livro " +
+                            "\n-----------------------------------------------------------------\n" +
+                            " 4 - Inserir vendedor " +
+                            " 5 - Atualizar vendedor " +
+                            " 6 - Deletar vendedor " +
+                            "\n-----------------------------------------------------------------\n" +
+                            " 7 - Vender livro " +
+                            "\n-----------------------------------------------------------------\n" +
+                            " 8 - Listar livros " +
+                            " 9 - Listar vendedores " +
+                            " 10 - Listar vendas " +
+                            " 999 - SAIR\n");
 
             int opcao = teclado.nextInt();
 
@@ -45,7 +57,60 @@ public class Console {
                 int codigo = teclado.nextInt();
                 LivroService.livroDelete(codigo);
 
+            } else if(opcao == 4) { //INSERIR vendedor
+
+
+                System.out.println("informe o nome do vendedor");
+                String nome = teclado.next();
+
+                System.out.println("informe o telefone do vendedor");
+                String telefone = teclado.next();
+
+                VendedorService.vendedorInsert(nome, telefone);
+            } else if(opcao == 5) { //atualizar vendedor
+
+
+                System.out.println("informe a matricula do vendedor");
+                int matricula = teclado.nextInt();
+
+                System.out.println("informe o novo telefone do vendedor");
+                String telefone = teclado.next();
+
+                VendedorService.vendedorUpdate(matricula, telefone);
+            }else if(opcao == 6) { //deletar vendedor
+
+
+                System.out.println("informe a matricula do vendedor");
+                int matricula = teclado.nextInt();
+
+                VendedorService.vendedorDelete(matricula);
+            }else if(opcao == 7) { //deletar vendedor
+
+
+                System.out.println("informe a matricula do vendedo");
+                int matricula = teclado.nextInt();
+
+                System.out.println("informe o codigo do livro");
+                int codigo = teclado.nextInt();
+
+                System.out.println("informe a quantidade de exemplares");
+                int quantidade = teclado.nextInt();
+
+                VendaService.vendaInsert(matricula, codigo, 1);
             }
+            else if(opcao == 8) { //listar livros
+
+                LivroService.livroFindAll();
+
+            }else if(opcao == 9) { //listar vendedores
+
+               VendedorService.vendedorFindAll();
+            }else if(opcao == 10) { //listar vendas
+
+                VendaService.vendaFindAll();
+
+            }
+
             else if (opcao == 999) { //SAIR DO SISTEMA
                 System.out.println("Processando...");
                 Thread.sleep(1300);
@@ -53,10 +118,6 @@ public class Console {
                 break;
             }
         }
-
-
-
-
     }
 
 }
