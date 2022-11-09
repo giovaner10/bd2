@@ -7,7 +7,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Conecta {
-    static final String URL = "jdbc:postgresql://localhost:5432/teste";
+    static final String URL = "jdbc:postgresql://localhost:5432/nova";
     static final String USER = "postgres";
     static final String PASS = "8718";
 

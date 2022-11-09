@@ -18,3 +18,5 @@ public class Venda {
         this.quantidade = quantidade;
     }
 }
+
+

@@ -15,7 +15,7 @@ public class Console {
         while (true){
             System.out.println(
                     "\n 1 - inserir livro " +
-                            " 2 - atualizar livro " +
+                            " 2 - Atualizar livro " +
                             " 3 - Deletar livro " +
                             "\n-----------------------------------------------------------------\n" +
                             " 4 - Inserir vendedor " +
@@ -23,10 +23,12 @@ public class Console {
                             " 6 - Deletar vendedor " +
                             "\n-----------------------------------------------------------------\n" +
                             " 7 - Vender livro " +
+                            " 8 - Atualizar venda " +
+                            " 9 - Deletar venda " +
                             "\n-----------------------------------------------------------------\n" +
-                            " 8 - Listar livros " +
-                            " 9 - Listar vendedores " +
-                            " 10 - Listar vendas " +
+                            " 10 - Listar livros " +
+                            " 11 - Listar vendedores " +
+                            " 12 - Listar vendas " +
                             " 999 - SAIR\n");
 
 
@@ -106,7 +108,7 @@ public class Console {
             }else if(opcao == 7) { //deletar vendedor
 
 
-                System.out.println("informe a matricula do vendedo");
+                System.out.println("informe a matricula do vendedor");
                 int matricula = teclado.nextInt();
 
                 System.out.println("informe o codigo do livro");
@@ -118,17 +120,40 @@ public class Console {
                 VendaService.vendaInsert(matricula, codigo, quantidade);
                 lerVerificar(teclado);
 
-            } else if(opcao == 8) { //listar livros
+            } else if (opcao == 8) { //atualizar vendA
+
+
+                System.out.println("informe o codigo da venda");
+                int codigo = teclado.nextInt();
+
+                System.out.println("informe o novo total de livros da venda");
+                int quantidade = teclado.nextInt();
+
+                VendaService.vendaUpdate(codigo, quantidade);
+                lerVerificar(teclado);
+
+            } else if(opcao == 9) { //deletar venda
+
+
+                System.out.println("informe o codigo da venda");
+                int codigo = teclado.nextInt();
+
+                VendaService.vendaDelete(codigo);
+                lerVerificar(teclado);
+
+            }
+
+            else if (opcao == 10) { //listar livros
 
                 LivroService.livroFindAll();
                 lerVerificar(teclado);
 
-            }else if(opcao == 9) { //listar vendedores
+            } else if (opcao == 11) { //listar vendedores
 
                 VendedorService.vendedorFindAll();
                 lerVerificar(teclado);
 
-            }else if(opcao == 10) { //listar vendas
+            } else if (opcao == 12) { //listar vendas
 
                 VendaService.vendaFindAll();
                 lerVerificar(teclado);

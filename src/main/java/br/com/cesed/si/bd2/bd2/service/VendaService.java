@@ -1,5 +1,6 @@
 package br.com.cesed.si.bd2.bd2.service;
 
+import br.com.cesed.si.bd2.bd2.DAO.LivroDAO;
 import br.com.cesed.si.bd2.bd2.DAO.VendaDAO;
 import br.com.cesed.si.bd2.bd2.entidades.Venda;
 
@@ -22,6 +23,31 @@ public class VendaService {
             e.printStackTrace();
         }
     }
+
+    public static void vendaUpdate(int codigo, int quantidade) {
+
+        try {
+            VendaDAO vendaDAO = new VendaDAO();
+            vendaDAO.atualizarVenda(codigo, quantidade);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void vendaDelete(int codigo) {
+
+        try {
+            VendaDAO vendaDAO = new VendaDAO();
+            vendaDAO.deletarVenda(codigo);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 
 

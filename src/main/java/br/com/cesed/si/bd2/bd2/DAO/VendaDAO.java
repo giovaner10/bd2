@@ -51,6 +51,61 @@ public class VendaDAO {
 
     }
 
+    public void atualizarVenda(int codigo, int quantidade) {
+
+        String sql = "UPDATE venda SET quantidade = ? WHERE codigo = ?";
+
+
+        try {
+
+            PreparedStatement preparador = con.prepareStatement(sql);
+
+            preparador.setInt(2, codigo);
+
+            preparador.setInt(1, quantidade);
+
+
+            System.out.println(preparador.execute());
+
+            preparador.close();
+
+            System.out.println("atualizacao realizada com sucesso");
+
+        } catch (SQLException e) {
+
+            System.out.println("Erro - " + e.getMessage());
+
+        }
+
+    }
+
+
+
+    public void deletarVenda(int codigo) {
+
+        String sql = "DELETE FROM venda WHERE codigo = ?";
+
+
+        try {
+
+            PreparedStatement preparador = con.prepareStatement(sql);
+
+            preparador.setInt(1, codigo);
+
+            preparador.execute();
+
+            preparador.close();
+
+            System.out.println("delecao de venda realizada com sucesso");
+
+        } catch (SQLException e) {
+
+            System.out.println("Erro - " + e.getMessage());
+
+        }
+
+    }
+
 
     public List<Venda> listarVenda() {
 
